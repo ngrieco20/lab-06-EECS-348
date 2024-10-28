@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+
+    <title>EECS 348 Lab Six Practice Two</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        .color-box {
+            margin: 20px auto;
+            padding: 20px;
+            border: 5px solid black; 
+            background-color: white; 
+            width: 300px; 
+        }
+        input {
+            margin: 5px;
+            width: 50px;
+        }
+        .input-section {
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>EECS 348 Lab Six Practice Two</h1>
+<p class="color-box" id="colorBox">Paragraph to be altered. Enter values before to alter!</p>
+
+<div class="input-section">
+    <label for="borderR">Border R(0-255): </label>
+    <input type="number" id="borderR" min="0" max="255"><br>
+    
+    <label for="borderG">Border G(0-255): </label>
+    <input type="number" id="borderG" min="0" max="255"><br>
+    
+    <label for="borderB">Border B(0-255): </label>
+    <input type="number" id="borderB" min="0" max="255"><br>
+    
+    <label for="borderWidth">Border Width: </label>
+    <input type="number" id="borderWidth" min="1"><br>
+    
+    <label for="bgR">Background R(0-255): </label>
+    <input type="number" id="bgR" min="0" max="255"><br>
+    
+    <label for="bgG">Background G(0-255): </label>
+    <input type="number" id="bgG" min="0" max="255"><br>
+    
+    <label for="bgB">Background B(0-255): </label>
+    <input type="number" id="bgB" min="0" max="255"><br>
+    
+    <button id="changeColorButton">Change the color!</button>
+</div>
+
+<script>
+    document.getElementById('changeColorButton').addEventListener('click', function() {
+        // gets RGB values and border width from inputs
+        var borderR = document.getElementById('borderR').value || 0; // defaults to 0 if empty
+        var borderG = document.getElementById('borderG').value || 0; // defaults to 0 if empty
+        var borderB = document.getElementById('borderB').value || 0; // defaults to 0 if empty
+        var borderWidth = document.getElementById('borderWidth').value || 1; // defaults to 1 if empty
+        var bgR = document.getElementById('bgR').value || 0; // defaults to 0 if empty
+        var bgG = document.getElementById('bgG').value || 0; // defaults to 0 if empty
+        var bgB = document.getElementById('bgB').value || 0; // defaults to 0 if empty
+        
+        // creates the color box element
+        var colorBox = document.getElementById('colorBox');
+
+        // sets the border and background color
+        colorBox.style.borderColor = 'rgb(' + borderR + ', ' + borderG + ', ' + borderB + ')';
+        colorBox.style.borderWidth = borderWidth + 'px';
+        colorBox.style.backgroundColor = 'rgb(' + bgR + ', ' + bgG + ', ' + bgB + ')';
+    });
+</script>
+
+</body>
+</html>
