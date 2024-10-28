@@ -1,5 +1,5 @@
 document.getElementById('passwordForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); // prevent form submission
 
     var password1 = document.getElementById('password1').value;
     var password2 = document.getElementById('password2').value;

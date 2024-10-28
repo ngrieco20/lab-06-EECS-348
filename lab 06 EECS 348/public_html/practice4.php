@@ -1,10 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplication Table Result</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 5px solid #000;
+            padding: 10px;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+        }
+        th {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center;">Multiplication Table</h1>
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $number = $_POST['number'];
+    $number = (int)$_POST['number']; // converts the  input to an integer 
 
-    echo "<h2>Multiplication Table up to $number</h2>";
     echo "<table>";
-    echo "<tr><th>X</th>"; // header for row indexes
+    echo "<tr><th></th>"; // empty cell for top left corner copies the example 
     for ($i = 1; $i <= $number; $i++) {
         echo "<th>$i</th>"; // column headers
     }
@@ -19,6 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "</tr>";
     }
     echo "</table>";
+} else {
+    echo "<p style='text-align: center;'>No number was provided. Please try again..</p>";
 }
 ?>
 

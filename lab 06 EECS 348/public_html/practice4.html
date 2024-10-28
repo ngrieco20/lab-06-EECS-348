@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-
+    <meta charset="UTF-8">
     <title>Multiplication Table</title>
     <style>
         table {
@@ -9,20 +9,24 @@
             margin: 20px auto;
         }
         th, td {
-            border: 1px solid #000;
+            border: 2px solid black;
             padding: 10px;
             text-align: center;
         }
+        th {
+            background-color: white;
+        }
     </style>
-    <script src="practice4.php" defer></script>
-
 </head>
 <body>
 
 <h1>Multiplication Table</h1>
 
-<form method="POST">
+<form method="POST" action="practice4.php">
     <label for="number">Enter a number: </label>
     <input type="number" id="number" name="number" required>
     <button type="submit">Generate Table</button>
 </form>
+
+</body>
+</html>
